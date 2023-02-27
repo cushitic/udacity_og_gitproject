@@ -1,6 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
+import os
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -8,7 +9,10 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 months = pd.Series(data=[1,2,3,4,5,6], index=['january', 'february', 'march', 'april', 'may', 'june'])
 days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
+
+
 def get_filters():
+    os.system('clear') # clear the screen before the program runs
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -33,6 +37,8 @@ def get_filters():
             break
         print('Invalid Input\n')
 
+    os.system('clear') # clear the screen between each question
+
     print('-'*40)
 
     # get user input for month (all, january, february, ... , june)
@@ -50,6 +56,8 @@ def get_filters():
             break
         print('Invalid Input\n')
     month = months[month]
+
+    os.system('clear') # clear the screen between each question
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
@@ -84,7 +92,7 @@ def load_data(city, month, day):
     """
 
     df = pd.read_csv(CITY_DATA[city])
-    print(df)
+    # print(df)
     df['Start Time'] =  pd.to_datetime(df['Start Time'])    
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
@@ -98,11 +106,11 @@ def load_data(city, month, day):
     if day in days:
         df = df[df['day_of_week'] == day.title()]
 
-
     return df
 
 
 def time_stats(df):
+    os.system('clear') # clear the screen before the data is returned
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -110,18 +118,30 @@ def time_stats(df):
 
     # display the most common month
     top_month = df['month'].value_counts().index[0]
-    print('Month with the MOST bike rentals: \n{}\n\n'.format(months.index[top_month-1]))
+    if months.index[top_month-1] in months:
+        print('')
+    else:
+        print('Month with the MOST bike rentals: \n{}\n\n'.format(months.index[top_month-1]))
 
     # display the most common day of week
     top_day = df['day_of_week'].value_counts().index[0]
-    print('Day with the MOST bike rentals: \n{}\n\n'.format(top_day))
+    if top_day.lower() in days:
+        print('')
+    else:
+        print('Day with the MOST bike rentals: \n{}\n\n'.format(top_day))
     
     # display the most common start hour
     top_hour = df['hour'].value_counts().index[0]
     print('hour with the MOST bike rentals: \n{}\n\n'.format(top_hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
+    print('')
     print('-'*40)
+    input('Press enter to see the next screen')
+    print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
 
 
 def station_stats(df):
@@ -143,7 +163,13 @@ def station_stats(df):
     print('The most common route is : \n{}\n\n'.format(top_st_en_combo))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
+    print('')
     print('-'*40)
+    input('Press enter to see the next screen')
+    print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
 
 
 def trip_duration_stats(df):
@@ -159,7 +185,13 @@ def trip_duration_stats(df):
     print('Average travel time in the selected location is:   {}'.format(time.strftime("%H:%M:%S", time.gmtime(df['Trip Duration'].mean()))))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
+    print('')
     print('-'*40)
+    input('Press enter to see the next screen')
+    print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
 
 
 def user_stats(df):
@@ -191,6 +223,9 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
     
     
     
