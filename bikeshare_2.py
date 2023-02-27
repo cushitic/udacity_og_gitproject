@@ -106,7 +106,6 @@ def load_data(city, month, day):
     if day in days:
         df = df[df['day_of_week'] == day.title()]
 
-
     return df
 
 
@@ -119,11 +118,17 @@ def time_stats(df):
 
     # display the most common month
     top_month = df['month'].value_counts().index[0]
-    print('Month with the MOST bike rentals: \n{}\n\n'.format(months.index[top_month-1]))
+    if months.index[top_month-1] in months:
+        print('')
+    else:
+        print('Month with the MOST bike rentals: \n{}\n\n'.format(months.index[top_month-1]))
 
     # display the most common day of week
     top_day = df['day_of_week'].value_counts().index[0]
-    print('Day with the MOST bike rentals: \n{}\n\n'.format(top_day))
+    if top_day.lower() in days:
+        print('')
+    else:
+        print('Day with the MOST bike rentals: \n{}\n\n'.format(top_day))
     
     # display the most common start hour
     top_hour = df['hour'].value_counts().index[0]
