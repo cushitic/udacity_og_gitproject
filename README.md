@@ -1,12 +1,11 @@
+## BikeShare Project Improvements v.01
 
-### Date created
+##### Date created
 27FEB2023
 
-### Project Title
-BikeShare Project Improvements
-
 ### Description
-This project is for the ongoing improvement of analytics returned by `bikeshare_2.py`
+This project represents the **Python** and **Git** portion of information learned in Udacity's _Programming for Data Science with Python_ course.  Its also an opportunity to show how software development documentation practices like READMEs and document strings are an important asset to my projects.
+
 ### Files used
 * bikeshare_2.py
 * csv files containing the bikeshare data of the relevant city or cities
@@ -15,5 +14,4 @@ This project is for the ongoing improvement of analytics returned by `bikeshare_
 It's important to give proper credit.
 A special thanks goes to this repo and its owners:
 
-https://github.com/udacity/pdsnd_github
-
+* [Udacity Project Repo](https://github.com/udacity/pdsnd_github)
