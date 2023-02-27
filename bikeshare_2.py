@@ -130,7 +130,13 @@ def time_stats(df):
     print('hour with the MOST bike rentals: \n{}\n\n'.format(top_hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
+    print('')
     print('-'*40)
+    input('Press enter to see the next screen')
+    print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
 
 
 def station_stats(df):
@@ -152,7 +158,13 @@ def station_stats(df):
     print('The most common route is : \n{}\n\n'.format(top_st_en_combo))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
+    print('')
     print('-'*40)
+    input('Press enter to see the next screen')
+    print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
 
 
 def trip_duration_stats(df):
@@ -168,7 +180,13 @@ def trip_duration_stats(df):
     print('Average travel time in the selected location is:   {}'.format(time.strftime("%H:%M:%S", time.gmtime(df['Trip Duration'].mean()))))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
+    print('')
     print('-'*40)
+    input('Press enter to see the next screen')
+    print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
 
 
 def user_stats(df):
@@ -199,6 +217,9 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+    print('-'*40)
+    print('-'*40)
+    print('\n\n\n\n\n')
     
     
     
