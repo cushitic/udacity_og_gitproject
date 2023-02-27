@@ -1,6 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
+import os
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -8,7 +9,10 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 months = pd.Series(data=[1,2,3,4,5,6], index=['january', 'february', 'march', 'april', 'may', 'june'])
 days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
+
+
 def get_filters():
+    os.system('clear') # clear the screen before the program runs
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -33,6 +37,8 @@ def get_filters():
             break
         print('Invalid Input\n')
 
+    os.system('clear') # clear the screen between each question
+
     print('-'*40)
 
     # get user input for month (all, january, february, ... , june)
@@ -50,6 +56,8 @@ def get_filters():
             break
         print('Invalid Input\n')
     month = months[month]
+
+    os.system('clear') # clear the screen between each question
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
@@ -103,6 +111,7 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
+    os.system('clear') # clear the screen before the data is returned
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
