@@ -1,4 +1,4 @@
-## BikeShare Project Improvements v.01
+## BikeShare Project Improvements
 
 ##### Date created
 27FEB2023
