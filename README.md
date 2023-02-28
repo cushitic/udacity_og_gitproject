@@ -12,6 +12,7 @@ This project represents the **Python** and **Git** portion of information learne
 
 ### Credits
 It's important to give proper credit.
-A special thanks goes to this repo and its owners:
+A special thanks goes to this repo and Udacity:
 
 * [Udacity Project Repo](https://github.com/udacity/pdsnd_github)
+* [Udacity](https://Udacity.com)
